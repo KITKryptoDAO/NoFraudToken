@@ -1,10 +1,10 @@
 # NoFraudToken
-An AI-assisted Identifier, Database and Bulk Burner for Fraud NFTs
+An AI-assisted Identifier, Database and Bulk Burner for fraudulent NFTs
 
 ## 0x00 Inspiration
 Because of the limitations of the ethereum protocol with respect to the implementation of accounts (both EOA and contract account) and NFT Token Standards (ERC-721 and ERC-1155), we as ordinary wallet (address/account) owners can't really "reject" an airdrop from an NFT contract, we can only passively receive it, not knowing for what purpose it was minted and by whom. This also gives the ground for phishing attacks that use fraudulent NFT airdrops. 
 
-My own hot wallet (ENS: [hannesgao.eth](https://etherscan.io/address/0xd02722722615935330252bD616bF4D0590840563)) has been airdropped hundreds of different scam NFTs on Polygon and Gnosis Chain, which I as a techie and OCD patient cannot tolerate. But if I need to transfer these fraudulent NFTs one by one to the burning address via traditional methods (e.g. front-end interaction on OpenSea using Metamask, signing, authorizing, sending), burning a single scam NFT will take me at least 1-2 minutes, which is a huge waste of time. 
+My own hot wallet (ENS: [hannesgao.eth](https://etherscan.io/address/0xd02722722615935330252bD616bF4D0590840563)) has been airdropped hundreds of different fraudulent NFTs on Polygon and Gnosis Chain, which I as a techie and OCD patient cannot tolerate. But if I need to transfer these fraudulent NFTs one by one to the burning address via traditional methods (e.g. front-end interaction on OpenSea using Metamask, signing, authorizing, sending), burning a single fraudulent NFT will take me at least 1-2 minutes, which is a huge waste of time. 
 
 ## 0x01 What it does
 So a great (and simple) product idea came up: 
@@ -12,28 +12,28 @@ So a great (and simple) product idea came up:
 
 Doesn't it sound wonderful? 
 
-If you are worried about users choosing the wrong valuable NFT and mixing it with fraudulent NFTs that need to be bulk burned, don't be afraid, we will apply the large language model GPT-4 and the image recognition model DALL-E 3 provided by OpenAI, as well as a filter based of audit information databases and APIs from the major NFT marketplaces (e.g. OpenSea, Element, BLUR and X2Y2) to help our users to identify whether a NFT and its collection is a fraudulent or not, based on its contract address and metadata! In order to allow the user to make the right judgment in the possible shortest time, we will provide a simple scoring system with color differences on the front-end.
+If you are worried about users choosing the wrong valuable NFT and mixing it with fraudulent NFTs that need to be bulk burned, don't be afraid, we will apply the large language model [GPT-4](https://openai.com/gpt-4/) and the image recognition model [DALL·E 3](https://openai.com/dall-e-3) provided by [OpenAI](https://platform.openai.com/docs/introduction), as well as a filter based of audit information databases and APIs from the major NFT marketplaces (e.g. [OpenSea](https://docs.opensea.io/), [Element](https://api.element.market/openapi/), [BLUR](https://blur.io/) and [X2Y2](https://x2y2.readme.io/reference/introduction/)) to help our users to identify whether a NFT and its collection is a fraudulent or not, based on its contract address and metadata! In order to allow the user to make the right judgment in the possible shortest time, we will provide a simple scoring system with color differences on the front-end.
 
-Additionally, based on the contract addresses of fraudulent NFTs burned by users, we will collect all the metadata related to these scam NFTs into our database for review, which can also be used to improve the accuracy of the prediction scores mentioned above and used to train our own AI models for more accuracy in determining whether an NFT is a fraud or not. 
+Additionally, based on the contract addresses of fraudulent NFTs burned by users, we will collect all the metadata of these fraudulent NFTs into our database for review, which can also be used to improve the accuracy of the prediction scores mentioned above and used to train our own AI models for more accuracy in determining whether an NFT is a fraud or not. 
 
-Don't worry about any privacy issues, the user's wallet address will never be collected, we will only collect the contract address and metadata of the fraudulent NFTs that were burned, and use it for transparent AI model training and for formal purposes of improving Web3 security (e.g. providing our database to Etherscan as an criteria for labeling certain NFT contracts).
+Don't worry about any privacy issues, the user's wallet address will never be collected, we will only collect the contract address and metadata of the fraudulent NFTs that were burned, and use it for transparent AI model training and for formal purposes to improve Web3 security (e.g. providing our database to [Etherscan](https://etherscan.io/) as an criteria for labeling certain NFT contracts).
 
 ## 0x02 How we built it (Technology Stack)
-- Front-end UI/UX: Vue, Vuetify (Component Framework)
-- Wallet-Link: Wagmi (React Hooks for Ethereum)
-- On-Chain interaction: Ethers.js
-- Smart Contract: Solidity, Hardhat (SDK), OpenZeppelin (Upgradable Smart Contract Components)
-- Testing: Waffel, Mocha, Chai
-- Back-end (for nofraud.token database): Python, Flask, SQLite
-- AI-Assistance: GPT-4, DALL-E 3
+- **Front-end UI/UX**: [Vue](https://vuejs.org/guide/introduction.html), [Vuetify](https://vuetifyjs.com/en/) (Component Framework)
+- **Wallet-Link**: [Wagmi](https://wagmi.sh/) (React Hooks for Ethereum)
+- **On-Chain interaction**: [Ethers.js](https://docs.ethers.org/v6/)
+- **Smart Contract**: [Solidity](https://docs.soliditylang.org/en/v0.8.23/), [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started/) (SDK), [OpenZeppelin](https://docs.openzeppelin.com/) (Upgradable Smart Contract Components)
+- **Testing**: [Waffel](https://getwaffle.io/) ([Smart Contract Testing](https://hardhat.org/hardhat-runner/docs/other-guides/waffle-testing)), [Mocha](https://mochajs.org/) (JavaScript Test Framework), [Chai](https://www.chaijs.com/) (BDD/TDD Assertion Library)
+- **Back-end (for nofraud.token database)**: Python, [Flask](https://flask.palletsprojects.com/en/3.0.x/), [SQLite](https://www.sqlite.org/index.html)
+- **AI-Assistance**: [GPT-4](https://openai.com/gpt-4/), [DALL·E 3](https://openai.com/dall-e-3)
 
 ## 0x03 Challenges we ran into
-- Knowledge and Skills: Imbalance in basic knowledge and development skills among our team members
-- Project management: What project management tools and methods are best suited for a project of this size and a team of six?
-- Time management: All of our team members have their own regular jobs or studies during the weekdays, and they can spare an hour a day during the week at most for self-study and project development, and on two days of the weekend we work together on Live Coding development within the framework of the regular weekly activities of KITKryptoDAO
-- Selection of technology stack and development tools: Hardhat or Foundary? Vue or React? Wagmi adapter for Vue-based front-end?
-- Chainlink functions: How to make meaningful use of the functions, features, and SDKs provided by Chainlink in our projects?
-- Upgradeable contract: Our smart contracts need to be upgradeable at the very beginning, in order to handle the changing functionality requirements and to address new types of fraud NFTs that may appear in the future
+- **Knowledge and Skills**: Imbalance in basic knowledge and development skills among our team members
+- **Project management**: What project management tools and methods are best suited for a project of this size and a team of six?
+- **Time management**: All of our team members have their own regular jobs or studies during the weekdays, and they can spare an hour a day during the week at most for self-study and project development, and on two days of the weekend we work together on Live Coding development within the framework of the regular weekly activities of KITKryptoDAO
+- **Selection of technology stack and development tools**: Hardhat or Foundary? Vue or React? Wagmi adapter for Vue-based front-end?
+- **Chainlink functions**: How to make meaningful use of the functions, features, and SDKs provided by Chainlink in our projects?
+- **Upgradeable contract**: Our smart contracts need to be upgradeable at the very beginning, in order to handle the changing functionality requirements and to address new types of fraud NFTs that may appear in the future
 
 ## 0x04 Accomplishments that we're proud of
 - TBD
@@ -42,7 +42,9 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 - TBD
 
 ## 0x06 What's next for NoFraud.Token
+- Register the handshake domain name ([nofraud.token](https://nofraud.token/)) for our project, host it on our cloud server, and publish it
+- Continuously iterate and enhance this project as a product/platform
 - Refine the frout-end UI/UX
 - AI-assistant update/upgrade
-- Cooperation with OpenAI and famous Web3 security companies like CertiK and SlowMist with our fraud NFT database/datafeed service
+- Cooperation with [OpenAI](https://platform.openai.com/docs/introduction) and Web3 security companies like [CertiK](https://www.certik.com/en/) and [SlowMist](https://www.slowmist.com/) with our fraud NFT database/datafeed as a service
 
