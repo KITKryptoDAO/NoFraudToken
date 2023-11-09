@@ -2,7 +2,7 @@
 An AI-assisted Identifier, Database and Bulk Burner for Fraud NFTs
 
 ## 0x00 Inspiration
-Because of the limitations of the ethereum protocol with respect to the implementation of accounts (both EOA and contract account) and NFT Token Standards (ERC-721 and ERC-1155), we as ordinary wallet (address) owners can't really "reject" an airdrop from an NFT contract, we can only passively receive it, not knowing for what purpose it was forged by whom. This also gives the ground for phishing attacks that use airdrops as a way to defraud NFTs. 
+Because of the limitations of the ethereum protocol with respect to the implementation of accounts (both EOA and contract account) and NFT Token Standards (ERC-721 and ERC-1155), we as ordinary wallet (address) owners can't really "reject" an airdrop from an NFT contract, we can only passively receive it, not knowing for what purpose it was forged by whom. This also gives the ground for phishing attacks that use fraudulent NFT airdrops. 
 
 My own hot wallet (ENS: [https://etherscan.io/address/0xd02722722615935330252bD616bF4D0590840563](hannesgao.eth)) has been airdropped hundreds of different scam NFTs on Polygon and Gnosis Chain, which I as a techie and OCD patient cannot tolerate. But if I need to transfer these scam NFTs one by one to the burning address via traditional methods (e.g. front-end interaction in OpenSea using Metamask, signing, authorizing, sending), burning a single scam NFT will take me at least 1-2 minutes, which is a huge waste of time. 
 
