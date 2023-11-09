@@ -24,7 +24,7 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 - **On-Chain interaction**: [Ethers.js](https://docs.ethers.org/v6/)
 - **Smart Contract**: [Solidity](https://docs.soliditylang.org/en/v0.8.23/), [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started/) (SDK), [OpenZeppelin](https://docs.openzeppelin.com/) (Upgradable Smart Contract Components)
 - **Testing**: [Waffel](https://getwaffle.io/) ([Smart Contract Testing](https://hardhat.org/hardhat-runner/docs/other-guides/waffle-testing)), [Mocha](https://mochajs.org/) (JavaScript Test Framework), [Chai](https://www.chaijs.com/) (BDD/TDD Assertion Library)
-- **Back-end (for nofraud.token database)**: Python, [Flask](https://flask.palletsprojects.com/en/3.0.x/), [SQLite](https://www.sqlite.org/index.html)
+- **Back-end**: Python, [Flask](https://flask.palletsprojects.com/en/3.0.x/), [SQLite](https://www.sqlite.org/index.html) (only for nofraud.token database)
 - **AI-Assistance**: [GPT-4](https://openai.com/gpt-4/), [DALL·E 3](https://openai.com/dall-e-3)
 
 ## 0x03 Challenges we ran into
