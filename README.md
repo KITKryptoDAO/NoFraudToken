@@ -1,2 +1,2 @@
 # NoFraudToken
-An AI-based Identifier, Database and Bulk Burner for Fraud NFTs
+An AI-assisted Identifier, Database and Bulk Burner for Fraud NFTs
