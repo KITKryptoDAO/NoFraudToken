@@ -18,7 +18,7 @@ Additionally, based on the contract addresses of fraudulent NFTs burned by users
 
 Don't worry about any privacy issues, the user's wallet address will never be collected, we will only collect the contract address and metadata of the fraudulent NFTs that were burned, and use it for transparent AI model training and for formal purposes to improve Web3 security (e.g. providing our database to [Etherscan](https://etherscan.io/) as an criteria for labeling certain NFT contracts).
 
-## 0x02 How we built it (Technology Stack)
+## 0x02 How would we build it (Technology Stack)
 - **Front-end UI/UX**: [Vue](https://vuejs.org/guide/introduction.html), [Vuetify](https://vuetifyjs.com/en/) (Component Framework)
 - **Wallet-Link**: [Wagmi](https://wagmi.sh/) (React Hooks for Ethereum)
 - **On-Chain interaction**: [Ethers.js](https://docs.ethers.org/v6/)
@@ -27,7 +27,7 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 - **Back-end**: Python, [Flask](https://flask.palletsprojects.com/en/3.0.x/), [SQLite](https://www.sqlite.org/index.html) (only for nofraud.token database)
 - **AI-Assistance**: [GPT-4](https://openai.com/gpt-4/), [DALL·E 3](https://openai.com/dall-e-3)
 
-## 0x03 Challenges we ran into
+## 0x03 Challenges we may run into
 - **Knowledge and Skills**: Imbalance in basic knowledge and development skills among our team members
 - **Project management**: What project management tools and methods are best suited for a project of this size and a team of six?
 - **Time management**: All of our team members have their own regular jobs or studies during the weekdays, and they can spare an hour a day during the week at most for self-study and project development, and on two days of the weekend we work together on Live Coding development within the framework of the regular weekly activities of KITKryptoDAO
@@ -44,6 +44,8 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 ## 0x06 What's next for NoFraud.Token
 - Register the handshake domain name ([nofraud.token](https://nofraud.token/)) for our project, host it on our cloud server, and publish it
 - Continuously iterate and enhance this project as a product/platform
+- To support multiple commonly used public chains and L2 (multi-chain support)
+- Using [EIP-4337](https://eips.ethereum.org/EIPS/eip-4337/) standard based gas wallet with account abstraction features for allowing users to choose a specific token on a specific chain to deposit to the wallet (e.g. MATIC on Polygon or USDC.e on Polygon), and provide multi-chain gas-free NFT burning service for users of our gas wallet with our multi-chain gas pools and [Chainlink-CCIP](https://chain.link/cross-chain/)-based or [Circle-CCTP](https://www.circle.com/en/cross-chain-transfer-protocol/)-based cross-chain functionality
 - Refine the frout-end UI/UX
 - AI-assistant update/upgrade
 - Cooperation with [OpenAI](https://platform.openai.com/docs/introduction) and Web3 security companies like [CertiK](https://www.certik.com/en/) and [SlowMist](https://www.slowmist.com/) with our fraud NFT database/datafeed as a service
