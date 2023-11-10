@@ -1,6 +1,8 @@
 # NoFraudToken
 An AI-assisted Identifier, Database and Bulk Burner for fraudulent NFTs
 
+![NoFraudToken_Logo](/assets/img/NoFraudToken_Logo.gif "NoFraudToken_Logo")
+
 ## 0x00 Inspiration
 Because of the limitations of the ethereum protocol with respect to the implementation of accounts (both EOA and contract account) and NFT Token Standards (ERC-721 and ERC-1155), we as ordinary wallet (address/account) owners can't really "reject" an airdrop from a NFT contract, we can only passively receive it, not knowing for what purpose it was minted and by whom. This also gives the ground for phishing attacks that use fraudulent NFT airdrops. 
 
@@ -26,6 +28,7 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 - **Testing**: [Waffel](https://getwaffle.io/) ([Smart Contract Testing](https://hardhat.org/hardhat-runner/docs/other-guides/waffle-testing)), [Mocha](https://mochajs.org/) (JavaScript Test Framework), [Chai](https://www.chaijs.com/) (BDD/TDD Assertion Library)
 - **Back-end**: Python, [Flask](https://flask.palletsprojects.com/en/3.0.x/), [SQLite](https://www.sqlite.org/index.html) (only for nofraud.token database)
 - **AI-Assistance**: [GPT-4](https://openai.com/gpt-4/), [DALL·E 3](https://openai.com/dall-e-3)
+- **CDN/CAPTCHA**: [Cloudflare Cache](https://developers.cloudflare.com/cache/), [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/)
 
 ## 0x03 Challenges we may run into
 - **Knowledge and Skills**: Imbalance in basic knowledge and development skills among our team members
