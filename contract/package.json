@@ -1,0 +1,22 @@
+{
+  "name": "nofraudtoken-contract",
+  "version": "1.0.0",
+  "description": "The Smart Contracts of NoFraudToken",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KITKryptoDAO/NoFraudToken.git"
+  },
+  "author": "KITKryptoDAO",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/KITKryptoDAO/NoFraudToken/issues"
+  },
+  "homepage": "https://github.com/KITKryptoDAO/NoFraudToken#readme",
+  "devDependencies": {
+    "hardhat": "^2.19.0"
+  }
+}
