@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "The Smart Contracts of NoFraudToken",
   "main": "index.js",
-  "scripts": {
-    "test": "test"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KITKryptoDAO/NoFraudToken.git"
@@ -17,6 +14,7 @@
   },
   "homepage": "https://github.com/KITKryptoDAO/NoFraudToken#readme",
   "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "hardhat": "^2.19.0"
   }
 }
