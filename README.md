@@ -21,8 +21,8 @@ Additionally, based on the contract addresses of fraudulent NFTs burned by users
 Don't worry about any privacy issues, the user's wallet address will never be collected, we will only collect the contract address and metadata of the fraudulent NFTs that were burned, and use it for transparent AI model training and for formal purposes to improve Web3 security (e.g. providing our database to [Etherscan](https://etherscan.io/) as an criteria for labeling certain NFT contracts).
 
 ## 0x02 How would we build it (Technology Stack)
-- **Front-end UI/UX**: [Vue](https://vuejs.org/guide/introduction.html), [Vuetify](https://vuetifyjs.com/en/) (Component Framework)
-- **Wallet-Link**: [Wagmi](https://wagmi.sh/) (React Hooks for Ethereum)
+- **Front-end UI/UX**: [Vue](https://vuejs.org/guide/introduction.html), [Vite](https://vitejs.dev/), [Vuetify](https://vuetifyjs.com/en/) (Component Framework)
+- **Wallet-Link**: [Web3Modal](https://docs.walletconnect.com/web3modal/about) v3, [Wagmi](https://wagmi.sh/) (React Hooks for Ethereum)
 - **On-Chain interaction**: [Ethers.js](https://docs.ethers.org/v6/)
 - **Smart Contract**: [Solidity](https://docs.soliditylang.org/en/v0.8.23/), [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started/) (SDK), [OpenZeppelin](https://docs.openzeppelin.com/) (Upgradable Smart Contract Components)
 - **Testing**: [Waffel](https://getwaffle.io/) ([Smart Contract Testing](https://hardhat.org/hardhat-runner/docs/other-guides/waffle-testing)), [Mocha](https://mochajs.org/) (JavaScript Test Framework), [Chai](https://www.chaijs.com/) (BDD/TDD Assertion Library)
