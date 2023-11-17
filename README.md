@@ -2,7 +2,7 @@
 
 An AI-assisted Identifier, Database and Bulk Burner for fraudulent NFTs
 
-![NoFraudToken_Logo](/assets/img/NoFraudToken_Logo.gif "NoFraudToken_Logo")
+![NoFraudToken_Logo](https://github.com/KITKryptoDAO/NoFraudToken/blob/main/assets/img/NoFraudToken.gif "NoFraudToken_Logo")
 
 ## 0x00 Inspiration
 
