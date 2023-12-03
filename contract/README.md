@@ -1,13 +1,70 @@
-# Sample Hardhat Project
+# No Fraude Token
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+| name  | address  | info  |
+|---|---|---|
+| admin  | `0x0CE692C5D27A6Ab5E41C2cB4E3EdC7b3a55c34a1`  | [scanlink](https://sepolia.etherscan.io/address/0x0CE692C5D27A6Ab5E41C2cB4E3EdC7b3a55c34a1)  |
+| 721Token  | `0xb5364607B81E4AD9a13B1104975914b1E35CD891`  | [scanlink](https://sepolia.etherscan.io/address/0xb5364607B81E4AD9a13B1104975914b1E35CD891)  |
+| NoFraudToken  |  `0x2794219fdE28c973B08509eFeBf0401F058a6543` | [scanlink](https://sepolia.etherscan.io/address/0x2794219fdE28c973B08509eFeBf0401F058a6543)  |
+## Install
 
-Try running some of the following tasks:
+To install dependencies, please run
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
 ```
+npm install
+```
+
+## Configuration
+
+### Set Env
+
+Create a `.env` file and copy the content of `.env.example` to it, set your private key and etherscan api key.
+
+### Add Network
+
+To support a new network, please add the network configuration to `networks` field in `hardhat.config.js`.
+
+```
+networks: {
+    network_name: {
+        url: "rpc url",
+        accounts: [private_key]
+    }
+}
+```
+
+## Deploy Contracts
+By default, all contracts are deployed through [Transparent Upgradeable Pattern](https://docs.openzeppelin.com/contracts/5.x/api/proxy#TransparentUpgradeableProxy). If you are not familiar with it, please refer to [this](https://docs.openzeppelin.com/contracts/5.x/api/proxy), [this](https://www.youtube.com/watch?v=JgSj7IiE4jA) and [this](https://www.youtube.com/watch?v=kWUDTZhxKZI) to learn.
+
+To deploy a test ERC721 contract named `HuoToken` on Sepolia, please run
+```
+npx hardhat run scripts/deployHuo.js --network sepolia
+```
+
+To verify a contract on Sepolia, please run
+```
+npx hardhat verify --network sepolia contract_address
+```
+
+To deploy NoFraudToken contract, please run
+```
+npx hardhat run scripts/deployNoFraudToken.js --network sepolia
+```
+
+> **Important**
+> All the transactions of the deployed contracts on some network such as `sepolia` are saved to the file `.openzeppelin/network_name.json`.
+> For upgradeable contracts, the proxyAdmin(`admin`), proxy(`proxies`) and its implemetnation(`impls`) addresses are save there.
+
+## Upgrade Contract
+
+With the help of the file `.openzeppelin/network_name.json`, just run the following command to upgrade ERC721 token
+```
+npx hardhat run scripts/upgradeHuo.js --network sepolia
+```
+
+To upgrade NoFraudToken contract, please run
+```
+npx hardhat run scripts/upgradeNoFraudeToken.js --network sepolia
+```
+
+
+
