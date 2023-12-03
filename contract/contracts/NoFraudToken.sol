@@ -6,7 +6,7 @@ import {PausableUpgradeable} from "@openzeppelin/contracts-upgradeable/utils/Pau
 
 contract NoFraudToken is OwnableUpgradeable, PausableUpgradeable{
     
-
+    
     function initialize() external initializer {
         __Ownable_init(_msgSender());
         __Pausable_init();
@@ -16,6 +16,8 @@ contract NoFraudToken is OwnableUpgradeable, PausableUpgradeable{
         return "hello KKD";
     }
 
-
+    function hodl() public pure returns (string memory) {
+        return "hodl";
+    }
 
 }
