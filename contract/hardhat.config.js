@@ -8,11 +8,11 @@ module.exports = {
   solidity: "0.8.20",
   networks: {
     sepolia: {
-      url: "https://ethereum-sepolia.blockpi.network/v1/rpc/public",
+      url: "https://ethereum-sepolia.publicnode.com",
       accounts: [process.env.PRIVATE_KEY],
     },
     mumbai: {
-      url: "https://twitter.com/elonmusk/status/1730765873693012169",
+      url: "https://polygon-mumbai-bor.publicnode.com",
       accounts: [process.env.PRIVATE_KEY]
     }
   },

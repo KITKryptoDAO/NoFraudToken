@@ -3,7 +3,7 @@
 | name  | address  | info  |
 |---|---|---|
 | admin  | `0x0CE692C5D27A6Ab5E41C2cB4E3EdC7b3a55c34a1`  | [scanlink](https://sepolia.etherscan.io/address/0x0CE692C5D27A6Ab5E41C2cB4E3EdC7b3a55c34a1)  |
-| 721Token  | `0x6FBC2d273a634149209405eF57C797d91075AB13`  | [scanlink](https://sepolia.etherscan.io/address/0x6FBC2d273a634149209405eF57C797d91075AB13)  |
+| 721Token  | `0xb5364607B81E4AD9a13B1104975914b1E35CD891`  | [scanlink](https://sepolia.etherscan.io/address/0xb5364607B81E4AD9a13B1104975914b1E35CD891)  |
 | NoFraudToken  |  `0x2794219fdE28c973B08509eFeBf0401F058a6543` | [scanlink](https://sepolia.etherscan.io/address/0x2794219fdE28c973B08509eFeBf0401F058a6543)  |
 ## Install
 
