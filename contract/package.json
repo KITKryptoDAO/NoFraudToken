@@ -14,11 +14,15 @@
   },
   "homepage": "https://github.com/KITKryptoDAO/NoFraudToken#readme",
   "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.5",
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/hardhat-upgrades": "^2.4.3",
+    "ethers": "^6.9.0",
     "hardhat": "^2.19.0"
   },
   "dependencies": {
     "@openzeppelin/contracts": "^5.0.0",
+    "@openzeppelin/contracts-upgradeable": "^5.0.0",
     "dotenv": "^16.3.1"
   }
 }

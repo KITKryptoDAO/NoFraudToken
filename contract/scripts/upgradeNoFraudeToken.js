@@ -7,14 +7,13 @@
 const { ethers, upgrades } = require("hardhat");
 
 async function main() {
-  
-  const Huo = await ethers.getContractFactory("HuoToken");
-  const huoProxy = await upgrades.deployProxy(Huo)
-  await huoProxy.waitForDeployment();
 
-  console.log(
-    "Huo Token deployed to ", await huoProxy.getAddress()
-  )
+  const Nft = await ethers.getContractFactory("NoFraudToken");
+  const nftProxy = "0x2794219fdE28c973B08509eFeBf0401F058a6543"
+  const upgraded = await upgrades.upgradeProxy(nftProxy, Nft)
+
+  const receipt = await upgraded.waitForDeployment();
+  console.log(receipt)
 }
 
 // We recommend this pattern to be able to use async/await everywhere
