@@ -3,7 +3,7 @@
 import requests
 
 def listFiles(query_params):
-    url = "https://api.pinata.cloud/data/pinList?" + query_params
+    url = "https://api.pinata.cloud/data/pinList" + query_params
 
     #for example: ?metadata[keyvalues]={"time":{"value":"2018-01-01 00:00:00.000+00","secondValue":"2018-02-01 00:00:00.000+00","op":"between"}}
     #for all query_params see: https://docs.pinata.cloud/reference/get_data-pinlist
