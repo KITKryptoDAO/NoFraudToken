@@ -9,7 +9,8 @@ const { ethers, upgrades } = require("hardhat");
 async function main() {
 
   const Nft = await ethers.getContractFactory("NoFraudToken");
-  const nftProxy = "0x2794219fdE28c973B08509eFeBf0401F058a6543"
+  // const nftProxy = "0x2794219fdE28c973B08509eFeBf0401F058a6543" // for sepolia
+  const nftProxy = "0x3BfFbf7328A7370E52532f99f2ee348CFAFf190C"
   const upgraded = await upgrades.upgradeProxy(nftProxy, Nft)
 
   const receipt = await upgraded.waitForDeployment();
