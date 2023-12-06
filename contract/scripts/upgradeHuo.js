@@ -9,7 +9,8 @@ const { ethers, upgrades } = require("hardhat");
 async function main() {
 
   const Huo = await ethers.getContractFactory("HuoToken");
-  const huoProxy = "0xb5364607B81E4AD9a13B1104975914b1E35CD891"
+  // const huoProxy = "0xb5364607B81E4AD9a13B1104975914b1E35CD891" // for sepolia
+  const huoProxy = "0x7BB751f3090f9E42984B441ceCB8C6Ed21Ea4002"
   const upgraded = await upgrades.upgradeProxy(huoProxy, Huo)
 
   const receipt = await upgraded.waitForDeployment();

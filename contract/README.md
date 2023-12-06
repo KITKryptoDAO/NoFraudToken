@@ -1,5 +1,14 @@
 # No Fraude Token
 
+## Contracts on Mumbai
+| name  | address  | info  |
+|---|---|---|
+| admin  | `0x5E3CE6324E753A3C9F60907c24D3946312EED2AF`  | [scanlink](https://mumbai.polygonscan.com/address/0x5E3CE6324E753A3C9F60907c24D3946312EED2AF)  |
+| 721Token  | `0x7BB751f3090f9E42984B441ceCB8C6Ed21Ea4002`  | [scanlink](https://mumbai.polygonscan.com/address/0x7BB751f3090f9E42984B441ceCB8C6Ed21Ea4002)  |
+| NoFraudToken  |  `0x3BfFbf7328A7370E52532f99f2ee348CFAFf190C` | [scanlink](https://mumbai.polygonscan.com/address/0x3BfFbf7328A7370E52532f99f2ee348CFAFf190C)  |
+
+## Contracts on Sepolia
+
 | name  | address  | info  |
 |---|---|---|
 | admin  | `0x0CE692C5D27A6Ab5E41C2cB4E3EdC7b3a55c34a1`  | [scanlink](https://sepolia.etherscan.io/address/0x0CE692C5D27A6Ab5E41C2cB4E3EdC7b3a55c34a1)  |
@@ -64,6 +73,35 @@ npx hardhat run scripts/upgradeHuo.js --network sepolia
 To upgrade NoFraudToken contract, please run
 ```
 npx hardhat run scripts/upgradeNoFraudeToken.js --network sepolia
+```
+
+## Run Tasks
+
+### Mint HuoToken 
+```
+npx hardhat mint --network <network_name> --to <receiver_address> --token-id <token_id>
+```
+* `network_name` could be `mumbai` or `sepolia`
+
+### Transfer HuoToken
+```
+ npx hardhat transfer --network <network_name> --to <receiver_address> --token-id <token_id>
+```
+
+### Set Approval All
+```
+✗ npx hardhat approve-all --network <network_name> --to <receiver_address>
+```
+
+### Send HuoToken to NoFraudToken for Burn
+```
+npx hardhat send --network <network_name> --nft <nft_address> --token-id <token_id>
+```
+* `nft_address` is the address of HuoToken contract, on mumbai it is `0x7BB751f3090f9E42984B441ceCB8C6Ed21Ea4002`, on sepolia it is `0xb5364607B81E4AD9a13B1104975914b1E35CD891`
+
+### Ask NoFraudToken to Burn HuoToken
+```
+npx hardhat back --network <network_name> --nft <nft_address> --token-id <token_id>
 ```
 
 
