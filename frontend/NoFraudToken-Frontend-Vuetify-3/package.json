@@ -10,9 +10,12 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
+    "@wagmi/core": "^1.4.10",
+    "@web3modal/wagmi": "^3.4.0",
     "core-js": "^3.29.0",
     "pinia": "^2.0.0",
     "roboto-fontface": "*",
+    "viem": "^1.19.11",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
     "vuetify": "^3.0.0"
