@@ -1,7 +1,6 @@
 {
-  "name": "nofraudtoken-frontend",
+  "name": "NoFraudToken-Vuetify-3-Frontend",
   "version": "0.0.0",
-  "private": true,
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -10,8 +9,7 @@
   },
   "dependencies": {
     "@mdi/font": "7.0.96",
-    "core-js": "^3.29.0",
-    "pinia": "^2.0.0",
+    "pinia": "^2.0.23",
     "roboto-fontface": "*",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
@@ -19,9 +17,8 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
-    "eslint": "^8.37.0",
+    "eslint": "^8.22.0",
     "eslint-plugin-vue": "^9.3.0",
-    "sass": "^1.60.0",
     "unplugin-fonts": "^1.0.3",
     "vite": "^4.2.0",
     "vite-plugin-vuetify": "^1.0.0"

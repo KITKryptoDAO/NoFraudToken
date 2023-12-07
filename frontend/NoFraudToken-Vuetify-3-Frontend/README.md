@@ -1,31 +1,51 @@
-# essentials
+# default
 
 ## Project setup
 
 ```
+# yarn
+yarn
+
 # npm
 npm install
+
+# pnpm
+pnpm install
+
+# bun
+bun install
 ```
 
 ### Compiles and hot-reloads for development
 
 ```
+# yarn
+yarn dev
+
 # npm
 npm run dev
+
+# pnpm
+pnpm dev
+
+# bun
+bun run dev
 ```
 
 ### Compiles and minifies for production
 
 ```
+# yarn
+yarn build
+
 # npm
 npm run build
-```
 
-### Lints and fixes files
+# pnpm
+pnpm build
 
-```
-# npm
-npm run lint
+# bun
+bun run build
 ```
 
 ### Customize configuration
