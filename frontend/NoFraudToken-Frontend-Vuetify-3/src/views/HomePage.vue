@@ -1,7 +1,7 @@
 <template>
-  <HelloWorld />
+  <TokenList />
 </template>
 
 <script setup>
-  import HelloWorld from '@/components/HelloWorld.vue'
+  import TokenList from '@/components/TokenList.vue'
 </script>
