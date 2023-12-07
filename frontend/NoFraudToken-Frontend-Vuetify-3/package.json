@@ -16,6 +16,7 @@
     "pinia": "^2.0.0",
     "roboto-fontface": "*",
     "viem": "^1.19.11",
+    "volar-service-vetur": "^0.0.17",
     "vue": "^3.2.0",
     "vue-router": "^4.0.0",
     "vuetify": "^3.0.0"

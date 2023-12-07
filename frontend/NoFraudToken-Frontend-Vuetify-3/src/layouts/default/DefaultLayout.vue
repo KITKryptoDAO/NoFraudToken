@@ -8,5 +8,5 @@
 
 <script setup>
   import DefaultBar from './AppBar.vue'
-  import DefaultView from './View.vue'
+  import DefaultView from './ViewLayout.vue'
 </script>
