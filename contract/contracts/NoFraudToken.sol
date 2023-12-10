@@ -20,7 +20,7 @@ contract NoFraudToken is OwnableUpgradeable, PausableUpgradeable{
         __Pausable_init();
     }
 
-    function getBack(address nft, uint256 tokenId) external {
+    function getBack(address nft, uint256 tokenId) public {
         require(nftGiver[msg.sender][nft][tokenId], "NoFraudToken: not owner");
         IERC721(nft).transferFrom(address(this), msg.sender, tokenId);
         nftAmount[msg.sender][nft] -= 1;
@@ -28,12 +28,26 @@ contract NoFraudToken is OwnableUpgradeable, PausableUpgradeable{
         emit BackEvent(msg.sender, nft, tokenId);
     }
 
-    function sendToBurn(address nft, uint256 tokenId) external {
+    function bulkBack(address nft, uint256[] calldata tokenIds) external {
+        uint256 length = tokenIds.length;
+        for (uint256 i; i < length; i++) {
+            uint256 tokenId = tokenIds[i];
+            getBack(nft, tokenId);
+        }
+    }
+
+    function sendToBurn(address nft, uint256 tokenId) public {
         IERC721(nft).transferFrom(msg.sender, address(this), tokenId);
         nftAmount[msg.sender][nft] += 1;
         nftGiver[msg.sender][nft][tokenId] = true;
         emit BurnEvent(msg.sender, nft, tokenId);
     }
-    
 
+    function bulkBurn(address nft, uint256[] calldata tokenIds) external {
+        uint256 length = tokenIds.length;
+        for (uint256 i; i < length; i++) {
+            uint256 tokenId = tokenIds[i];
+            sendToBurn(nft, tokenId);
+        }
+    }
 }
