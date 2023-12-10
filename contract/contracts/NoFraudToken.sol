@@ -28,7 +28,7 @@ contract NoFraudToken is OwnableUpgradeable, PausableUpgradeable{
         emit BackEvent(msg.sender, nft, tokenId);
     }
 
-    function listBack(address nft, uint256[] calldata tokenIds) external {
+    function bulkBack(address nft, uint256[] calldata tokenIds) external {
         uint256 length = tokenIds.length;
         for (uint256 i; i < length; i++) {
             uint256 tokenId = tokenIds[i];
@@ -43,7 +43,7 @@ contract NoFraudToken is OwnableUpgradeable, PausableUpgradeable{
         emit BurnEvent(msg.sender, nft, tokenId);
     }
 
-    function listBurn(address nft, uint256[] calldata tokenIds) external {
+    function bulkBurn(address nft, uint256[] calldata tokenIds) external {
         uint256 length = tokenIds.length;
         for (uint256 i; i < length; i++) {
             uint256 tokenId = tokenIds[i];

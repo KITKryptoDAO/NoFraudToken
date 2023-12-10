@@ -34,7 +34,6 @@ task ("approve-all", "Approves all tokens")
   .addParam("to", "The address of the recipient")
   .setAction(async (taskArgs, hre) => {
     const signer = await hre.ethers.getSigners();
-    console.log(await ethers.provider.getTransactionCount(signer[0].address))
     const tokenAddress = address[hre.network.name]["HuoToken"]
     const huo = await hre.ethers.getContractAt("HuoToken", tokenAddress);
     const tx = await huo.setApprovalForAll(taskArgs.to, true)
@@ -54,7 +53,7 @@ task("approve", "Approves a token")
     console.log(`approved ${taskArgs.tokenId} for ${taskArgs.to}`)
   });
 
-task("send", "Gives a token to the NoFraudToken contract")
+task("burn", "Send a token to the NoFraudToken contract to burn it")
   .addParam("nft", "The address of the NFT")
   .addParam("tokenId", "The ID of the token")
   .setAction(async (taskArgs, hre) => {
@@ -66,6 +65,20 @@ task("send", "Gives a token to the NoFraudToken contract")
     console.log(`gave ${taskArgs.tokenId} on ${taskArgs.nft} to ${nftAddress}`)
   })
 
+task("bulk-burn", "Send a list of tokens to the NoFraudToken contract to burn them")
+  .addParam("nft", "The address of the NFT")
+  .addParam("tokenIds", "The IDs of the tokens")
+  .setAction(async (taskArgs, hre) => {
+    const signer = await hre.ethers.getSigners();
+    const nftAddress = address[hre.network.name]["NoFraudToken"]
+    const nft = await hre.ethers.getContractAt("NoFraudToken", nftAddress);
+    const tokenIds = taskArgs.tokenIds.split(",")
+    console.log(tokenIds)
+    const tx = await nft.bulkBurn(taskArgs.nft, [2,3])
+    console.log(tx.hash)
+    console.log(`gave ${taskArgs.tokenIds} on ${taskArgs.nft} to ${nftAddress}`)
+  })
+
 task("back", "Ask a token back")
   .addParam("nft", "The address of the NFT")
   .addParam("tokenId", "The ID of the token")
@@ -75,8 +88,25 @@ task("back", "Ask a token back")
     const nft = await hre.ethers.getContractAt("NoFraudToken", nftAddress);
     const tx = await nft.getBack(taskArgs.nft, taskArgs.tokenId)
     console.log(tx.hash)
-    console.log(`gave ${taskArgs.tokenId} on ${taskArgs.nft} to ${nftAddress}`)
+    console.log(`Ask ${taskArgs.tokenId} on ${taskArgs.nft} from ${nftAddress}`)
   })
+
+task("bulk-back", "Ask a list of tokens back")
+.addParam("nft", "The address of the NFT")
+.addParam("tokenIds", "The ID of the token")
+.setAction(async (taskArgs, hre) => {
+  const signer = await hre.ethers.getSigners();
+    const nftAddress = address[hre.network.name]["NoFraudToken"]
+    const nft = await hre.ethers.getContractAt("NoFraudToken", nftAddress);
+    const tokenIds = taskArgs.tokenIds.split(",")
+    console.log(tokenIds)
+    const tx = await nft.bulkBack(taskArgs.nft, [2,3])
+    console.log(tx.hash)
+    console.log(`Ask ${taskArgs.tokenIds} on ${taskArgs.nft} to from ${nftAddress}`)
+})
+
+
+
 
 
 task("transfer", "Transfers a token")
@@ -90,6 +120,11 @@ task("transfer", "Transfers a token")
     console.log(tx.hash)
     console.log(`transferred ${taskArgs.tokenId} from ${signer[0].address} to ${taskArgs.to}`)
   });
+
+// task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
+//   const accounts = await hre.ethers.getSigners();
+//   console.log(accounts);
+// });
 
 
 /** @type import('hardhat/config').HardhatUserConfig */
