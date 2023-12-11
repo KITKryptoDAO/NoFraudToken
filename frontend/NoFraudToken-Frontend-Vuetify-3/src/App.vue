@@ -1,25 +1,62 @@
 <template>
   <router-view />
+  <app-bar></app-bar>
 </template>
 
 <script setup>
-  import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/vue'
-  import { polygon, polygonMumbai, polygonZkEvm, polygonZkEvmTestnet } from 'viem/chains'
+import AppBar from '@/components/AppBar.vue'
 
-  // 1. Get projectId at https://cloud.walletconnect.com
-  const projectId = '98b476fa6c6e545c330cfd899fc67a38'
+import { createWeb3Modal, defaultWagmiConfig } from '@web3modal/wagmi/vue'
+import { polygonMumbai } from 'viem/chains'
 
-  // 2. Create wagmiConfig
-  const metadata = {
-    name: 'NoFraudToken',
-    description: 'An AI-assisted Identifier, Database and Bulk Burner for fraudulent NFTs',
-    url: 'https://burner.kitkryptodao.org/',
-    icons: ['https://avatars.githubusercontent.com/u/37784886']
-  }
+// Get projectId at https://cloud.walletconnect.com
+const projectId = '98b476fa6c6e545c330cfd899fc67a38'
 
-  const chains = [polygon, polygonMumbai, polygonZkEvm, polygonZkEvmTestnet]
-  const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+// Create wagmiConfig
+const metadata = {
+  name: 'NoFraudToken',
+  description: 'An AI-assisted Identifier, Database and Bulk Burner for fraudulent NFTs',
+  url: 'https://burner.kitkryptodao.org/',
+  icons: ['']
+}
 
-  // 3. Create modal
-  createWeb3Modal({ wagmiConfig, projectId, chains })
+const chains = [polygonMumbai]
+const wagmiConfig = defaultWagmiConfig({ chains, projectId, metadata })
+
+// Create modal
+createWeb3Modal({ wagmiConfig, projectId, chains })
+
+// Get Connected Wallet Address
+import { getAccount } from '@wagmi/core'
+
+const account = getAccount()
+
+// Alchemy SDK & API Setup
+import { Network, Alchemy } from 'alchemy-sdk';
+
+const settings = {
+  apiKey: "xSgGAD4PG4DrziFVVaBB9heCq6fuwFIQ",
+  network: Network.MATIC_MUMBAI,
+};
+
+const alchemy = new Alchemy(settings);
+
+// Get all the NFTs owned by an address
+// const nfts = alchemy.nft.getNftsForOwner(account.address);
+
+// Print all NFTs in Console
+// console.log(account.address)
+// console.log(nfts)
+
+const main = async () => {
+  //Call the method to get the nfts owned by this address
+  let response = await alchemy.nft.getNftsForOwner(account.address)
+
+  //Logging the response to the console
+  console.log("this is response:")
+  console.log(response)
+};
+
+main();
+
 </script>
