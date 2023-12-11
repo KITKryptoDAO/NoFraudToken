@@ -57,10 +57,10 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 
 ### 0x032 Database
 
-- IPFS Endpoint Setup (Using Infura Endpoint)
+- IPFS Endpoint Setup
 - Database Setup on IPFS
 - Database & Front-end Intergration
-- Database Interactions from Front-end after successful Burning (Using Web3.js)
+- Database Interactions from Front-end after successful Burning
 
 ### 0x033 Testing & QA
 
