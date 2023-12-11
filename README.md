@@ -31,8 +31,8 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 - **On-Chain Interaction**: [Ethers.js](https://docs.ethers.org/v6/) or [Web3.js](https://web3js.readthedocs.io/en/v1.10.0/)
 - **Smart Contract**: [Solidity](https://docs.soliditylang.org/en/v0.8.23/), [Hardhat](https://hardhat.org/hardhat-runner/docs/getting-started/) (SDK), [OpenZeppelin](https://docs.openzeppelin.com/) (Upgradable Smart Contract Components)
 - **Testing**: [Waffel](https://getwaffle.io/) ([Smart Contract Testing](https://hardhat.org/hardhat-runner/docs/other-guides/waffle-testing)), [Mocha](https://mochajs.org/) (JavaScript Test Framework), [Chai](https://www.chaijs.com/) (BDD/TDD Assertion Library)
-- ~~**Back-end**: Python, [Flask](https://flask.palletsprojects.com/en/3.0.x/), [SQLite](https://www.sqlite.org/index.html) (only for nofraud.token database)~~
-- **Database**: IPFS, Infura IPFS Endpoint ([Tutorial](https://www.infura.io/blog/post/a-developers-tale-building-a-database-with-ipfs))
+- **Back-end**: Python 
+- **Database**: IPFS, Pinata IPFS Gateway & API ([Pinata Docs](https://docs.pinata.cloud/docs/ipfs-pinning))
 - **AI-Assistance**: [GPT-4](https://openai.com/gpt-4/), [DALL·E 3](https://openai.com/dall-e-3)
 - **CDN/CAPTCHA**: [Cloudflare Cache](https://developers.cloudflare.com/cache/), [Cloudflare Turnstile](https://developers.cloudflare.com/turnstile/)
 
@@ -80,14 +80,16 @@ Don't worry about any privacy issues, the user's wallet address will never be co
 
 ## 0x05 Accomplishments that we're proud of
 
-- TBD
+- Deployed related smart contracts for burning on Polygon Mumbai Testnet and Ethereum Sepolia Testnet (See [README.md](https://github.com/KITKryptoDAO/NoFraudToken/blob/main/contract/README.md) in `/contract`)
 
 ## 0x06 What we learned
 
-- TBD
+- Learned how to get on-chain data from the RPC-API (read NFT position data from an EOA account address)
+- Gained insight into the ERC-721 and ERC-1155 token standard implementations and interfaces by studying OpenZeppelin's standard contract code
 
 ## 0x07 What's next for NoFraud.Token
 
+- Complete the front-end development
 - Register the handshake domain name ([nofraud.token](https://nofraud.token/)) for our project, host it on our cloud server, and publish it
 - Continuously iterate and enhance this project as a product/platform
 - To support multiple commonly used public chains and L2 (multi-chain support)
