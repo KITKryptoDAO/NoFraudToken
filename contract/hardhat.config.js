@@ -73,8 +73,12 @@ task("bulk-burn", "Send a list of tokens to the NoFraudToken contract to burn th
     const nftAddress = address[hre.network.name]["NoFraudToken"]
     const nft = await hre.ethers.getContractAt("NoFraudToken", nftAddress);
     const tokenIds = taskArgs.tokenIds.split(",")
-    console.log(tokenIds)
-    const tx = await nft.bulkBurn(taskArgs.nft, [2,3])
+    let bulk = []
+    tokenIds.forEach(element => {
+      bulk.push(parseInt(element))
+    });
+    console.log(bulk)
+    const tx = await nft.bulkBurn(taskArgs.nft, bulk)
     console.log(tx.hash)
     console.log(`gave ${taskArgs.tokenIds} on ${taskArgs.nft} to ${nftAddress}`)
   })
@@ -99,15 +103,15 @@ task("bulk-back", "Ask a list of tokens back")
     const nftAddress = address[hre.network.name]["NoFraudToken"]
     const nft = await hre.ethers.getContractAt("NoFraudToken", nftAddress);
     const tokenIds = taskArgs.tokenIds.split(",")
-    console.log(tokenIds)
-    const tx = await nft.bulkBack(taskArgs.nft, [2,3])
+    let bulk = []
+    tokenIds.forEach(element => {
+      bulk.push(parseInt(element))
+    });
+    console.log(bulk)
+    const tx = await nft.bulkBack(taskArgs.nft, bulk)
     console.log(tx.hash)
     console.log(`Ask ${taskArgs.tokenIds} on ${taskArgs.nft} to from ${nftAddress}`)
 })
-
-
-
-
 
 task("transfer", "Transfers a token")
   .addParam("to", "The address of the recipient")

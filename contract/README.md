@@ -95,13 +95,23 @@ npx hardhat mint --network <network_name> --to <receiver_address> --token-id <to
 
 ### Send HuoToken to NoFraudToken for Burn
 ```
-npx hardhat send --network <network_name> --nft <nft_address> --token-id <token_id>
+npx hardhat burn --network <network_name> --nft <nft_address> --token-id <token_id>
 ```
 * `nft_address` is the address of HuoToken contract, on mumbai it is `0x7BB751f3090f9E42984B441ceCB8C6Ed21Ea4002`, on sepolia it is `0xb5364607B81E4AD9a13B1104975914b1E35CD891`
 
-### Ask NoFraudToken to Burn HuoToken
+### Ask NoFraudToken to Send HuoToken back
 ```
 npx hardhat back --network <network_name> --nft <nft_address> --token-id <token_id>
+```
+
+### Send Multiple HuoToken to NoFraudToken for Burn
+```
+npx hardhat bulk-burn --network <network_name> --nft <nft_address> --token-ids <token_id_1,token_id_2>
+```
+
+### Ask NoFraudToken to Send Multiple HuoToken back
+```
+npx hardhat bulk-back --network <network_name> --nft <nft_address> --token-ids <token_id_1,token_id_2>
 ```
 
 
